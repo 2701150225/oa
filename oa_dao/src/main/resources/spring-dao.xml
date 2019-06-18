@@ -1,0 +1,35 @@
+﻿<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+  <!--扫描dao包下所有的注解类型-->
+    <context:component-scan base-package="com.wk.oa.dao"/>
+
+    <!--配置数据源-->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/oa?useUnicode=true&amp;characterEncoding=utf-8"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
+    </bean>
+
+    <!--设置sesionFactory-->
+    <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--设置数据源-->
+        <property name="dataSource" ref="dataSource"/>
+        <!--设置别名-->
+        <property name="typeAliasesPackage" value="com.wk.oa.entity"/>
+    </bean>
+
+     <!--配置mapper扫描-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--注入SqlSessionFactory-->
+        <property name="sqlSessionFactoryBeanName" value="sessionFactory"/>
+        <!-- 设置需要扫描的Dao接口-->
+        <property name="basePackage" value="com.wk.oa.dao"/>
+    </bean>
+
+</beans>

@@ -12,6 +12,11 @@
         <module>oa_dao</module>
         <module>oa_service</module>
         <module>oa_web</module>
+        <module>oa_web</module>
+        <module>oa_web</module>
+        <module>oa_web</module>
+        <module>oa_web</module>
+        <module>oa_web</module>
     </modules>
 
 
