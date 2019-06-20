@@ -6,7 +6,7 @@
 <section id="content" class="table-layout animated fadeIn">
     <div class="tray tray-center">
         <div class="content-header">
-            <h2> 部门列表 </h2>
+            <h2> 员工列表 </h2>
             <p class="lead"></p>
         </div>
         <div class="admin-form theme-primary mw1000 center-block" style="padding-bottom: 175px;">
@@ -22,7 +22,7 @@
                                     <i class="fa fa-trash"></i>
                                 </button>
                                 <button type="button" class="btn btn-default light">
-                                    <i class="fa fa-plus" onclick="javascript:window.location.href='/department/to_add';"></i>
+                                    <i class="fa fa-plus" onclick="javascript:window.location.href='/employee/to_add';"></i>
                                 </button>
                             </div>
                         </div>
@@ -43,14 +43,15 @@
                         <thead>
                         <tr class="">
                             <th class="text-center hidden-xs">Select</th>
-                            <th class="hidden-xs">部门编号</th>
-                            <th class="hidden-xs">部门名称</th>
-                            <th class="hidden-xs">地址</th>
+                            <th class="hidden-xs">工号</th>
+                            <th class="hidden-xs">姓名</th>
+                            <th class="hidden-xs">所属部门</th>
+                            <th class="hidden-xs">职务</th>
                             <th>操作</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach items="${list}" var="dept">
+                        <c:forEach items="${list}" var="emp">
                         <tr class="message-unread">
                             <td class="hidden-xs">
                                 <label class="option block mn">
@@ -58,12 +59,15 @@
                                     <span class="checkbox mn"></span>
                                 </label>
                             </td>
-                            <td>${dept.sn}</td>
-                            <td>${dept.name}</td>
-                            <td>${dept.address}</td>
+                            <td>${emp.sn}</td>
+                            <td>${emp.name}</td>
+                            <td class="text-center fw600">${emp.department.name}</td>
+                            <td class="hidden-xs">
+                                <span class="badge badge-warning mr10 fs11">${emp.post}</span>
+                            </td>
                             <td>
-                                <a href="/department/to_update?sn=${dept.sn}">编辑</a>
-                                <a href="/department/remove?sn=${dept.sn}">删除</a>
+                                <a href="/employee/to_update?sn=${emp.sn}">编辑</a>
+                                <a href="/employee/remove?sn=${emp.sn}">删除</a>
                             </td>
                         </tr>
                         </c:forEach>
