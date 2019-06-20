@@ -1,6 +1,6 @@
 package com.wk.oa.dao;
 
-import com.wk.oa.entiy.Department;
+import com.wk.oa.entity.Department;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

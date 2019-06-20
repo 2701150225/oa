@@ -1,16 +1,18 @@
 package com.wk.oa.service.impl;
 
 import com.wk.oa.dao.DepartmentDao;
-import com.wk.oa.entiy.Department;
+import com.wk.oa.entity.Department;
 import com.wk.oa.service.DepartmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @Service("departmentService")
 public class DepartmentServiceImpl implements DepartmentService {
-    @Autowired
+
+   @Resource
     private DepartmentDao departmentDao;
 
     public void add(Department department) {
@@ -29,6 +31,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     public Department get(String sn) {
+
         return departmentDao.select(sn);
     }
 

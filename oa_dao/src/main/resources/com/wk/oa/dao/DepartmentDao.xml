@@ -8,15 +8,14 @@
         <result property="address" column="address" javaType="String"/>
     </resultMap>
 
+
     <insert id="insert" parameterType="Department">
         insert into department values(#{sn},#{name},#{address})
-        insert into department VALUES (#{sn},#{name},#{address})
     </insert>
 
     <update id="update" parameterType="Department">
         update department set name=#{name},address=#{address} where sn=#{sn}
-        update depart
-</update>
+    </update>
 
     <delete id="delete" parameterType="String">
         delete from department where sn=#{sn}

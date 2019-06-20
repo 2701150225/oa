@@ -1,7 +1,7 @@
 package com.wk.oa.service;
 
 
-import com.wk.oa.entiy.Department;
+import com.wk.oa.entity.Department;
 
 import java.util.List;
 

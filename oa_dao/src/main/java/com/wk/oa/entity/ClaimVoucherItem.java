@@ -1,4 +1,4 @@
-package com.wk.oa.entiy;
+package com.wk.oa.entity;
 
 public class ClaimVoucherItem {
     private Integer id;
