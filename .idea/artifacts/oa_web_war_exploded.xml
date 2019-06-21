@@ -13,6 +13,7 @@
           <element id="archive" name="oa_dao-1.0-SNAPSHOT.jar">
             <element id="module-output" name="oa_dao" />
           </element>
+          <element id="library" level="project" name="Maven: com.alibaba:druid:1.0.9" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.44" />
           <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.4.4" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:4.0.2.RELEASE" />
