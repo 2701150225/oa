@@ -3,7 +3,6 @@ package com.wk.oa.service.impl;
 import com.wk.oa.dao.DepartmentDao;
 import com.wk.oa.entity.Department;
 import com.wk.oa.service.DepartmentService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

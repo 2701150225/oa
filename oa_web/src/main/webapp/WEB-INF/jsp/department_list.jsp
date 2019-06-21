@@ -16,10 +16,10 @@
                         <div class="hidden-xs hidden-sm col-md-3">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-default light">
-                                    <i class="fa fa-refresh"></i>
+                                    <i class="fa fa-refresh"  onclick="javascript:window.location.href='/department/refresh';"></i>
                                 </button>
                                 <button type="button" class="btn btn-default light">
-                                    <i class="fa fa-trash"></i>
+                                    <i class="fa fa-trash"  ></i>
                                 </button>
                                 <button type="button" class="btn btn-default light">
                                     <i class="fa fa-plus" onclick="javascript:window.location.href='/department/to_add';"></i>
@@ -54,7 +54,7 @@
                         <tr class="message-unread">
                             <td class="hidden-xs">
                                 <label class="option block mn">
-                                    <input type="checkbox" name="mobileos" value="FR">
+                                    <input type="checkbox" name="sn" value="FR">
                                     <span class="checkbox mn"></span>
                                 </label>
                             </td>
