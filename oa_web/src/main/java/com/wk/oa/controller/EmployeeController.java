@@ -51,6 +51,7 @@ public class EmployeeController {
     }
 
     @RequestMapping("/update")
+
     public String update(Employee employee){
         employeeService.edit(employee);
         return "redirect:list";
