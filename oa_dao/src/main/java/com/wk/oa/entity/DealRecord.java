@@ -9,14 +9,14 @@ public class DealRecord {
 
     private Integer claimVoucherId;
 
-    private String dealSn;
+    private String dealSn; //处理人编号
 
     @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm")
-    private Date dealTime;
+    private Date dealTime; //处理时间
 
-    private String dealWay;
+    private String dealWay; //处理方式
 
-    private String dealResult;
+    private String dealResult;//处理结果
 
     private String comment;
 

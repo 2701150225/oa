@@ -4,8 +4,11 @@ package com.wk.oa.controller;
 import com.wk.oa.entity.Employee;
 import com.wk.oa.service.UserService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -21,11 +24,15 @@ public class UserController {
         return  "login";
     }
 
-    @RequestMapping("/login")
-    public String login(HttpSession session, @RequestParam String sn,@RequestParam String password){
+    @RequestMapping(value = "/login",method= RequestMethod.POST)
+
+    public String login(HttpSession session, @RequestParam String sn, @RequestParam String password, Model model){
+        String msg;
         Employee employee =userService.login(sn,password);
         if (employee==null){
-            return "redirect:login";
+            msg="用户名或密码错误";
+            model.addAttribute("msg",msg);
+            return "login";
         }
         session.setAttribute("employee",employee);
         return "redirect:user";
@@ -55,6 +62,7 @@ public class UserController {
             if (newPassword1.equals(newPassword2)) {
                 employee.setPassword(newPassword1);
                 userService.changePassword(employee);
+
                 return "redirect:to_login";
             }
         }

@@ -7,17 +7,17 @@ import java.util.Date;
 public class ClaimVoucher {
     private Integer id;
 
-    private String cause;
+    private String cause; //申请原因
 
-    private String createSn;
+    private String createSn;//创建者编号
     @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm")
-    private Date createTime;
+    private Date createTime;//创建时间
 
-    private String nextDealSn;
+    private String nextDealSn;//待处理人编号
 
     private Double totalAmount;
 
-    private String status;
+    private String status; //报销单状态
 
     public Integer getId() {
         return id;
@@ -75,8 +75,9 @@ public class ClaimVoucher {
         this.status = status;
     }
 
-    private Employee creater;
-    private Employee dealer;
+    //关联对象
+    private Employee creater; //创建者
+    private Employee dealer;  //处理人
 
     public Employee getCreater() {
         return creater;

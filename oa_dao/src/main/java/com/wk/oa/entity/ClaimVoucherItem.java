@@ -1,11 +1,14 @@
 package com.wk.oa.entity;
 
+/**
+ * 报销单条目
+ */
 public class ClaimVoucherItem {
     private Integer id;
 
-    private Integer claimVoucherId;
+    private Integer claimVoucherId;  //报销单编号
 
-    private String item;
+    private String item;  //费用类型
 
     private Double amount;
 

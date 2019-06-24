@@ -13,6 +13,13 @@
     <link rel="stylesheet" type="text/css" href="assets/skin/default_skin/css/theme.css">
     <link rel="stylesheet" type="text/css" href="assets/admin-tools/admin-forms/css/admin-forms.css">
     <link rel="shortcut icon" href="assets/img/favicon.ico">
+
+    <script type="text/javascript">
+
+        if("${msg}"!=null&&"${msg}".length>0){
+            alert("${msg}");
+        }
+    </script>
 </head>
 <body class="external-page external-alt sb-l-c sb-r-c">
 <div id="main" class="animated fadeIn">
