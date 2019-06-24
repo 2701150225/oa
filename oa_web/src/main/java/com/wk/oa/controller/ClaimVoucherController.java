@@ -20,7 +20,7 @@ public class ClaimVoucherController {
 
     @RequestMapping("/to_add")
     public String toAdd(Map<String, Object> map) {
-        map.put("item", Contant.getItems());
+        map.put("items", Contant.getItems());
         map.put("info", new ClaimVoucherInfo());
         return "claim_voucher_add";
     }
