@@ -16,6 +16,8 @@ public interface ClaimVoucherService {
     List<ClaimVoucherItem> getItems(int cvid);
 
     List<DealRecord> getRecords(int cvid);
+
+     List<ClaimVoucher> getForSelf(String sn);
 }
 
 

@@ -47,4 +47,9 @@ public class ClaimVoucherServiceImpl implements ClaimVoucherService {
     public List<DealRecord> getRecords(int cvid) {
         return dealRecordDao.selectByClaimVoucher(cvid);
     }
+
+    public List<ClaimVoucher> getForSelf(String sn) {
+        return claimVoucherDao.selectByCreateSn(sn);
+    }
+
 }
