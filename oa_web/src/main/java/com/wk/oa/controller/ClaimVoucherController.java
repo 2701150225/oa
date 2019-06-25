@@ -51,4 +51,21 @@ public class ClaimVoucherController {
         return "claim_voucher_deal";
     }
 
+
+    @RequestMapping("/to_update")
+    public String toUpdate(int id,Map<String,Object> map){
+        map.put("items", Contant.getItems());
+        ClaimVoucherInfo info=new ClaimVoucherInfo();
+        info.setClaimVoucher(claimVoucherService.get(id));
+        info.setItems(claimVoucherService.getItems(id));
+        map.put("info",info);
+        return "claim_voucher_update";
+    }
+    @RequestMapping("/update")
+    public String update(HttpSession session, ClaimVoucherInfo info){
+        Employee employee = (Employee)session.getAttribute("employee");
+        info.getClaimVoucher().setCreateSn(employee.getSn());
+        claimVoucherService.update(info.getClaimVoucher(),info.getItems());
+        return "redirect:deal";
+    }
 }
