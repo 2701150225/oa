@@ -1,8 +1,5 @@
 package com.wk.oa.service;
 
-
-
-
 import com.wk.oa.entity.Employee;
 
 import java.util.List;
@@ -13,4 +10,5 @@ public interface EmployeeService {
     void remove(String sn);
     Employee get(String sn);
     List<Employee> getAll();
+
 }

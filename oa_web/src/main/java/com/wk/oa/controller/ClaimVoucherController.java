@@ -68,4 +68,11 @@ public class ClaimVoucherController {
         claimVoucherService.update(info.getClaimVoucher(),info.getItems());
         return "redirect:deal";
     }
+
+    @RequestMapping("/submit")
+    public String submit(int id){
+       claimVoucherService.submit(id);
+        return "redirect:deal";
+    }
+
 }

@@ -83,12 +83,29 @@ public class ClaimVoucherServiceImpl implements ClaimVoucherService {
 
         for (ClaimVoucherItem item : items) {
             item.setClaimVoucherId(claimVoucher.getId());
-            if (item.getId()!=null&&item.getId()>0) {
+            if (item.getId() != null && item.getId() > 0) {
                 claimVoucherItemDao.update(item);
             } else {
                 claimVoucherItemDao.insert(item);
             }
         }
 
+    }
+
+    public void submit(int id) {
+        ClaimVoucher claimVoucher = claimVoucherDao.select(id);
+        Employee employee = employeeDao.select(claimVoucher.getCreateSn());
+        claimVoucher.setStatus(Contant.CLAIMVOUCHER_SUBMIT);
+        claimVoucher.setNextDealSn(employeeDao.selectByDepartmentAndPost(employee.getDepartmentSn(), Contant.POST_FM).get(0).getSn());
+        claimVoucherDao.update(claimVoucher);
+
+        DealRecord dealRecord = new DealRecord();
+        dealRecord.setDealWay(Contant.DEAL_SUBMIT);
+        dealRecord.setDealSn(employee.getSn());
+        dealRecord.setClaimVoucherId(id);
+        dealRecord.setDealResult(Contant.CLAIMVOUCHER_SUBMIT);
+        dealRecord.setDealTime(new Date());
+        dealRecord.setComment("无");
+        dealRecordDao.insert(dealRecord);
     }
 }

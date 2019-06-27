@@ -1,6 +1,7 @@
 package com.wk.oa.dao;
 
 import com.wk.oa.entity.Employee;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,4 +13,5 @@ public interface EmployeeDao {
      void delete(String sn);
      Employee select(String sn);
      List<Employee> selectAll();
+     List<Employee> selectByDepartmentAndPost(@Param("dsn") String dsn,@Param("post") String post);
 }

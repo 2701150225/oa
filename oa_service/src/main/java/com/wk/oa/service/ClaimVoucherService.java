@@ -22,6 +22,8 @@ public interface ClaimVoucherService {
     List<ClaimVoucher> getForDeal(String sn);
 
     void update(ClaimVoucher claimVoucher, List<ClaimVoucherItem> items);
+
+    void submit(int id);
 }
 
 
