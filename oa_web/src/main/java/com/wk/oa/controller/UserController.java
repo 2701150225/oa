@@ -2,6 +2,7 @@ package com.wk.oa.controller;
 
 
 import com.wk.oa.entity.Employee;
+import com.wk.oa.global.Contant;
 import com.wk.oa.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,13 +35,18 @@ public class UserController {
             model.addAttribute("msg",msg);
             return "login";
         }
+
         session.setAttribute("employee",employee);
         return "redirect:user";
     }
 
 
     @RequestMapping("/user")
-    public String user(){
+    public String user(HttpSession session){
+        Employee employee = (Employee) session.getAttribute("employee");
+        if(employee.getPost().equals(Contant.POST_GM)){
+            return "admin";
+        }
         return "user";
     }
 
@@ -62,7 +68,6 @@ public class UserController {
             if (newPassword1.equals(newPassword2)) {
                 employee.setPassword(newPassword1);
                 userService.changePassword(employee);
-
                 return "redirect:to_login";
             }
         }
