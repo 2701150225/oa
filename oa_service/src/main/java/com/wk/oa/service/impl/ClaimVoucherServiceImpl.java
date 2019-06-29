@@ -35,7 +35,7 @@ public class ClaimVoucherServiceImpl implements ClaimVoucherService {
         claimVoucherDao.insert(claimVoucher);
 
         for (ClaimVoucherItem item : items) {
-            item.setClaimVoucherId(claimVoucher.getId());
+             item.setClaimVoucherId(claimVoucher.getId());
             claimVoucherItemDao.insert(item);
         }
     }
