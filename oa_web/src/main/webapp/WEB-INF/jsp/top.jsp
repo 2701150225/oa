@@ -1,14 +1,12 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.wk.oa.global.Contant"%>
 <!DOCTYPE html>
 <html>
-
-
 <head>
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
-
     <title> 欢迎使用OA系统 </title>
-
     <link rel="stylesheet" type="text/css" href="/assets/skin/default_skin/css/theme.css">
     <link rel="stylesheet" type="text/css" href="/assets/admin-tools/admin-forms/css/admin-forms.css">
     <link rel="shortcut icon" href="/assets/img/favicon.ico">
@@ -109,10 +107,12 @@
                             <a href="/employee/list">
                                 <span class="glyphicon glyphicon-calendar"></span> 所有员工 </a>
                         </li>
+                        <c:if test="${sessionScope.employee.post==Contant.POST_GM}">
                         <li class="active">
                             <a href="/employee/to_add">
                                 <span class="glyphicon glyphicon-check"></span> 添加员工 </a>
                         </li>
+                        </c:if>
                     </ul>
                 </li>
                 <li>
@@ -126,10 +126,12 @@
                             <a href="/department/list">
                                 <span class="glyphicon glyphicon-calendar"></span> 所有部门 </a>
                         </li>
+                        <c:if test="${sessionScope.employee.post==Contant.POST_GM}">
                         <li class="active">
                             <a href="/department/to_add">
                                 <span class="glyphicon glyphicon-check"></span> 添加部门 </a>
                         </li>
+                        </c:if>
                     </ul>
                 </li>
             </ul>

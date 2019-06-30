@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ page import="com.wk.oa.global.Contant" %>
 <jsp:include page="top.jsp"/>
 
 <section id="content" class="table-layout animated fadeIn">
@@ -62,8 +62,10 @@
                             <td>${dept.name}</td>
                             <td>${dept.address}</td>
                             <td>
+                                <c:if test="${sessionScope.employee.post==Contant.POST_GM}">
                                 <a href="/department/to_update?sn=${dept.sn}">编辑</a>
                                 <a href="/department/remove?sn=${dept.sn}">删除</a>
+                                </c:if>
                             </td>
                         </tr>
                         </c:forEach>

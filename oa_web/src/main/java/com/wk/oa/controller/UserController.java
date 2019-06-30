@@ -35,7 +35,6 @@ public class UserController {
             model.addAttribute("msg",msg);
             return "login";
         }
-
         session.setAttribute("employee",employee);
         return "redirect:user";
     }
@@ -44,9 +43,6 @@ public class UserController {
     @RequestMapping("/user")
     public String user(HttpSession session){
         Employee employee = (Employee) session.getAttribute("employee");
-        if(employee.getPost().equals(Contant.POST_GM)){
-            return "admin";
-        }
         return "user";
     }
 

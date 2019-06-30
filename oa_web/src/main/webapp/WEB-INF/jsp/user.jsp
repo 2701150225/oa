@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:include page="top_user.jsp"/>
+<jsp:include page="top.jsp"/>
 
 <section id="content" class="table-layout animated fadeIn">
     <div class="tray tray-center">
